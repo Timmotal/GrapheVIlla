@@ -1,0 +1,122 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+/* --------------------------------------------------------------------------------------------*/
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+section {
+  /* position: fixed; */
+  width: 100%;
+  /* top: 0;
+  left: 0; */
+  height: 100vh;
+  overflow: hidden;
+}
+.pattern {
+  /* position: relative; */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: animateBg 10s ease-in-out infinite;
+}
+
+@keyframes animateBg {
+  0%, 100% {
+    transform: scale(1.6) rotate(-15deg); 
+  }
+  50% {
+    transform: scale(1.6) rotate(15deg);
+  }
+}
+
+.pattern .face {
+  /* position: relative; */
+  width: 100%;
+  height: 80vh;
+  background: url(../src/assets/samuraicon9.png);
+  background-size: 100px 100px;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 100px;
+  }
+}
+
+.pattern .face.face2 {
+  height: 100vh;
+  transform-origin: top;
+  transform: rotateX(70deg);
+}
+
+.pattern .face1:before {
+  content: '';
+  /* position: absolute; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 125px;
+  background: linear-gradient(0deg, rgba(0,0,0,.5), transparent);
+}
+
+.pattern .face2:before {
+  content: '';
+  /* position: absolute; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 125px;
+  background: linear-gradient(180deg, rgba(0,0,0,.5), transparent);
+}
+
+@media only screen and (max-width: 400px) {
+  @keyframes animateBg {
+    0%, 100% {
+      transform: scale(1.75) rotate(-15deg); 
+    }
+    50% {
+      transform: scale(1.75) rotate(15deg);
+    }
+  }  
+}
